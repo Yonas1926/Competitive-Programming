@@ -1,12 +1,17 @@
-def fizz_buzz(n):
-    answer = []
-    for num in range(1, n+1):
-        if num % 3 == 0:
-            if num % 5 == 0:
-                answer += "FizzBuzz"
+class Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
+        self.n = n
+
+        answer = []
+        for num in range(1, self.n+1):
+            if num % 3 == 0:
+                if num % 5 == 0:
+                    answer.append("FizzBuzz")
+                else:
+                    answer.append("Fizz")
+            elif num % 5 == 0:
+                answer.append("Buzz")
             else:
-                answer += "Fizz"
-        elif num % 5 == 0:
-            answer += "Buzz"
+                answer.append(f"{num}")
         
-    return answer
+        return answer
