@@ -1,0 +1,5 @@
+class Solution:
+    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
+        h_and_n = [[heights[i],names[i]] for i in range(len(heights))]
+        h_and_n = sorted(h_and_n, reverse = True)
+        return [name for height, name in h_and_n]
