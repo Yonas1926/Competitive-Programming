@@ -1,0 +1,12 @@
+from collections import Counter
+class Solution:
+    def maxOperations(self, nums: List[int], k: int) -> int:
+        count_dict = Counter(nums)
+        ans = 0
+        
+        for ele in count_dict:
+            ans += min(count_dict[ele], count_dict[k - ele])
+            
+        ans //= 2
+        
+        return ans
