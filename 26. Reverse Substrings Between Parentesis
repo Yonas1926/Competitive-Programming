@@ -1,0 +1,21 @@
+class Solution:
+    def reverseParentheses(self, s: str) -> str:
+        s1 = []
+        
+        for i in s:
+            if i == ')':
+                s2 = []
+                while s1:
+                    temp = s1.pop()
+                    if temp == '(':
+                        break
+                    else:
+                        s2.append(temp)                    
+                
+                s1.extend(s2)
+                        
+            else:
+                s1.append(i)
+            
+            
+        return "".join(s1)
