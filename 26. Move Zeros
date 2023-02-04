@@ -1,0 +1,11 @@
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        
+        swap_indx = 0
+        
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[swap_indx], nums[i] = nums[i] , nums[swap_indx]
+                swap_indx += 1
+
+        
