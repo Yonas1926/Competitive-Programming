@@ -1,0 +1,8 @@
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        start = jump = head
+        while jump and jump.next:
+            start = start.next
+            jump = jump.next.next
+            
+        return start
