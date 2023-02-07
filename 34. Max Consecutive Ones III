@@ -1,0 +1,24 @@
+class Solution:
+    def longestOnes(self, nums: List[int], k: int) -> int:
+        left = right = 0
+        flipped = 0
+        con_len = 0
+        
+        while right < len(nums):
+            if nums[right] == 1:
+                con_len = max(con_len, right - left + 1)
+            
+            else:
+                if flipped < k:
+                    flipped += 1
+                    con_len = max(con_len, right - left + 1)
+                
+                else:
+                    while flipped >= k:
+                        if nums[left] == 0:
+                            flipped -= 1
+                        left += 1
+                    flipped += 1
+            right += 1
+            
+        return con_len
